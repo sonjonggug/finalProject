@@ -7,39 +7,25 @@
 <html lang="en">
 
 <head profile="http://www.w3.org/2005/10/profile">
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>메인통계</title>
-     
-    
-
-
     <!-- Custom fonts for this template-->
     <link href="${pageContext.request.contextPath}/resources/AdminChart/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
     <!-- Custom styles for this template-->
-   
-
 </head>
-
 <body id="page-top">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0-rc.1/chartjs-plugin-datalabels.min.js" integrity="sha512-+UYTD5L/bU1sgAfWA0ELK5RlQ811q8wZIocqI7+K0Lhh8yVdIoAMEs96wJAIbgFvzynPm36ZCXtkydxu1cs27w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-	$(".infoMenu").addClass("active");
-});
-</script>
+
 <script type="text/javascript">
 var LineChart;
 var LinePie;
@@ -53,22 +39,16 @@ function loadJson(){
 	
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth4',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth4',
         dataType:"json",
         success:function(data){
         	let sum=[];
         	let date=[];
-        	
-        	
-        	
-        	
+	
         	for(let i=0; i<data.length;i++){
         		sum.push(data[i].sum);
-        		date.push(data[i].date);
-        		     		    		
-        	}       
-        	
-      	 
+        		date.push(data[i].date);     		     		    		
+        	}          	 
         var ctx = document.getElementById("Chart1");         
       
          LineChart = new Chart(ctx, {
@@ -101,9 +81,7 @@ function loadJson(){
                     ticks: {
                     	 beginAtZero:true,
                          callback: function(value, index, values) {
-                             return  number_format(value);
-                    	
-                    	
+                             return  number_format(value);               	
                     }
                 }}]
             },
@@ -127,7 +105,7 @@ function getSumListMonth3(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListDay',
+        url:'${pageContext.request.contextPath}/admin/getSumListDay',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -195,7 +173,7 @@ function load(){
 	 
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListYear',
+        url:'${pageContext.request.contextPath}/admin/getSumListYear',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -262,7 +240,7 @@ function getSumListMonth(){
 	LineChart.destroy();
 	$.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -334,7 +312,7 @@ function getSumListMonth1(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth1',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth1',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -399,7 +377,7 @@ function getSumListMonth2(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth2',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth2',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -465,7 +443,7 @@ function getSumListMonth5(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth5',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth5',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -530,7 +508,7 @@ function getSumListMonth6(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth6',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth6',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -595,7 +573,7 @@ function getSumListMonth7(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth7',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth7',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -662,7 +640,7 @@ function getSumListMonth8(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth8',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth8',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -727,7 +705,7 @@ function getSumListMonth9(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth9',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth9',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -792,7 +770,7 @@ function getSumListMonth10(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth10',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth10',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -857,7 +835,7 @@ function getSumListMonth11(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth11',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth11',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -922,7 +900,7 @@ function getSumListMonth12(){
 	LineChart.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth12',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth12',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -988,7 +966,7 @@ function getSumListMonth20(){
 	LineChart.destroy();
 	$.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth20',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth20',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -1061,7 +1039,7 @@ function getSumListMonth21(){
 	LineChart.destroy();
 	$.ajax({
         type:"POST",
-        url:'../admin/getSumListMonth21',
+        url:'${pageContext.request.contextPath}/admin/getSumListMonth21',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -1132,7 +1110,7 @@ function pieChart(){
 	
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListPie',
+        url:'${pageContext.request.contextPath}/admin/getSumListPie',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -1194,7 +1172,7 @@ function pieChartDay(){
 	LinePie.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListPieDay',
+        url:'${pageContext.request.contextPath}/admin/getSumListPieDay',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -1256,7 +1234,7 @@ function pieChartMonth(){
 	LinePie.destroy();
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListPieMonth',
+        url:'${pageContext.request.contextPath}/admin/getSumListPieMonth',
         dataType:"json",
         success:function(data){
         	let sum=[];
@@ -1319,7 +1297,7 @@ function BarChartDay(){
 	
     $.ajax({
         type:"POST",
-        url:'../admin/getSumListBarDay',
+        url:'${pageContext.request.contextPath}/admin/getSumListBarDay',
         dataType:"json",
         success:function(data){
         	let mcode=[];
@@ -1690,7 +1668,7 @@ function pie(){
                                          <div class="col-sm-7 col-sm-offset-6">
                                      <select class="form-control "   name="title" onchange="javascript:PieSelect(this);">				       
 								       <option value="1">오늘 판매량</option> 
-								        <option  value="2">이번달 판매량</option>
+								        <option selected value="2">이번달 판매량</option>
 								          <option  value="3">이번년도 판매량</option>								        		             
 								        </select>
 								        </div>
@@ -1779,12 +1757,6 @@ function pie(){
     <!-- Bootstrap core JavaScript-->
      <script src="${pageContext.request.contextPath}/resources/AdminChart/js/demo/chart-area-demo.js"></script>
     <script src="${pageContext.request.contextPath}/resources/AdminChart/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
    </div></div>
-    
-    
-  
-
 </body>
-
 </html>
